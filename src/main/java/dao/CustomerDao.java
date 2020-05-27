@@ -32,15 +32,13 @@ public class CustomerDao {
                 c.setLastName(rS.getString("lastName"));
                 c.setEmail(rS.getString("email"));
 
+                customers.add(c);
+
             }
-            } catch(SQLException throwables){
+            } catch(SQLException | ClassNotFoundException throwables){
                 throwables.printStackTrace();
-            } catch(ClassNotFoundException e){
-                e.printStackTrace();
             }
+        return customers;
         }
 
-        return customers;
     }
-
-}
